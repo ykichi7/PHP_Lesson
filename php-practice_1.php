@@ -79,8 +79,11 @@ $county = [
     '茨城県' => '水戸市'
 ];
 
-echo "埼玉県の県庁所在地は、" . $county['埼玉県'] . "です。";
-
+foreach ($county as $prefecture => $city) {
+    if ($prefecture === '埼玉県') {
+        echo $prefecture . "の県庁所在地は、" . $city . "です。";
+    }
+}
 
 // Q9 連想配列-3
 <?php
@@ -161,7 +164,7 @@ echo '24は'.distinguishNum(24);
 
 // Q13 関数とswitch文
 <?php
-// 成績を判定する関数
+
 function evaluateGrade($grade) {
     switch ($grade) {
         
