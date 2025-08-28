@@ -1,5 +1,4 @@
-<?php
-// Q1 変数と文字列
+<!--  Q1 変数と文字列 -->
 <?php
 
 $name = '吉野耕平';
@@ -98,6 +97,8 @@ $county = [
     '山梨県' => '甲府市'
 ];
 
+$kanto = ['東京都', '神奈川県', '千葉県', '埼玉県', '栃木県', '群馬県', '茨城県'];
+
 foreach ($county as $prefecture => $city) {
     if (in_array($prefecture, $kanto)) {
         // 関東地方の場合
@@ -110,14 +111,75 @@ foreach ($county as $prefecture => $city) {
 
 // Q10 関数-1
 
+<?php
+function hello ($name)
+{
+    echo $name."さん、こんにちは。" . "\n";
+}
+
+hello('吉野');
+hello('山田');
 
 // Q11 関数-2
+
+<?php
+
+//税込価格を計算する関数
+function calcTaxInPrice ($price)
+{
+    return $price * 1.1;
+}
+
+//商品の価格
+$price = 1000;
+
+//税込価格をtaxInPriceに代入
+$taxInPrice = calcTaxInPrice($price);
+
+echo $price .'円の商品の税込価格は' .$taxInPrice .'円です。';
 
 
 // Q12 関数とif文
 
+<?php
+
+function distinguishNum ($numbar)
+{
+    if ($numbar % 2 === 0)
+    {
+        return '偶数です。';
+    }
+    else
+    {
+        return '奇数です。';
+    }
+    
+}
+
+echo '11は'.distinguishNum(11) ."\n";
+echo '24は'.distinguishNum(24);
 
 // Q13 関数とswitch文
+<?php
+// 成績を判定する関数
+function evaluateGrade($grade) {
+    switch ($grade) {
+        
+        case 'A':
+        case 'B':
+            return "合格です。";
+        
+        case 'C':
+            return "合格ですが追加課題があります。";
+        
+        case 'D':
+            return "不合格です。";
+        
+        default:
+            return "判定不明です。講師に問い合わせてください。";
+    }
+}
 
-
-?>
+// 関数を呼び出して結果を表示
+echo evaluateGrade('A') . "\n" ;
+echo evaluateGrade('E');
