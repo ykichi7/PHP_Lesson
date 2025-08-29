@@ -62,9 +62,11 @@ $personalInfos = [
     ],
 ];
 
-foreach ($personalInfos as $info) {
-    echo $info['name'] . 'の電話番号は' . $info['tel'] . "です。\n";
+foreach ($personalInfos as $index => $info) {
+    $num = $index + 1; // 0始まりを1始まりに変換
+    echo $num . '番目の' . $info['name'] . 'の電話番号は' . $info['tel'] . "です。\n";
 }
+
 
 //問題3
 
@@ -196,7 +198,5 @@ $totalDays = $interval->days;
 
 // 出力
 echo "あの日から" . $totalDays . "日経過しました。";
-
-
 
 ?>
